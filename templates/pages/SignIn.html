@@ -1,0 +1,41 @@
+{%block content%}
+{%load static%}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Sign in</title>
+    <link rel="stylesheet" href="{% static 'css/signin.css'%}">
+
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="container">
+        <br />
+        <form class="login_form" method="POST">
+            {% csrf_token %}
+            <h3 class="label">Students Affairs <br />Login</h3>
+           <br/>
+            <div class="font">Username</div>
+            <input autocomplete="off" type="text" name="email" placeholder="Enter your name or email">
+            <div id="email_error">Please fill up your Username</div>
+
+            <br />
+            <div class="font font2">Password</div>
+            <input type="password" name="password" placeholder="Your password">
+            <div id="pass_error">Please fill up your Password</div>
+
+             <input type="submit" value="LogIn" >
+        </form>
+    </div>
+    <script src="{% static 'js/signin.js'%} "></script>
+
+    </body>
+
+</html>
+{%endblock content%}

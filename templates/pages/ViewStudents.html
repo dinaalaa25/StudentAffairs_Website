@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> view students</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<body>
+    <br/>
+    <br/>
+        <h1>All Student</h1>
+        <table id="t1">
+            <tr>
+                <th>Name</th>
+                <th>Id</th>
+                <th>GPA</th>
+                <th>Level</th>
+                <th>Department</th>
+                <th>status</th>
+            </tr>
+            {% for AddStudentt in ViewStudent %}
+            <tr>
+                <td>{{AddStudentt.fname}} </td>
+                <td>{{AddStudentt.St_ID}}</td>
+                <td>{{AddStudentt.gpa}}</td>
+                <td>{{AddStudentt.level}}</td>
+                <td>{{AddStudentt.department}}</td>
+                <td>{{AddStudentt.status}}</td>
+                <td><a href="delete/{{AddStudentt.id}}">delete</a></td> 
+                <td><a href="Edit/{{AddStudentt.id}}">update</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    
+      
+
+      
+</body>
+
+</html>
+    {%endblock content%}
+

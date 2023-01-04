@@ -1,0 +1,51 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search</title>
+    <link rel="stylesheet" href="{% static 'css/search.css'%}">
+</head>
+
+<body>
+
+    <center>
+        <br />
+        <form class="search" methd="GET">
+            <div class="container">
+                {% csrf_token %}
+                <input type="search" name="fname" id="name" placeholder="Search for a student">
+                <div class="search"></div>
+        </form>
+        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+        <center>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Id</th>
+                    <th>GPA</th>
+                    <th>Level</th>
+                    <th>Department</th>
+                    <th>status</th>
+                </tr>
+                {% for s in students%}
+                <tr>
+                    <td> {{s.fname}}</td>
+                    <td>{{s.St_ID}}</td>
+                    <td>{{s.gpa}}</td>
+                    <td>{{s.level}}</td>
+                    <td>{{s.department}}</td>
+                    <td>{{s.status}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        </center>
+
+        </dev>
+    </center>
+</body>
+
+</html>
+{%endblock content%}

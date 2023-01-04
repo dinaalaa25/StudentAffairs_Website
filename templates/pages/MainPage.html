@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<body>
+    <center>
+        <div class="topnav">
+            <div class="navbar">
+                <a href="{%url 'SignIn'%}"> Student Affairs website</a>
+                <a href="">Human Resources Website</a>
+                <a href="">Higher studies website</a>
+                <a href=""> Laboratory tracking website</a>
+            </div>
+
+        </div>
+        <div class="mainpage">
+            </br>
+            <h1 id="h1">Welcome<br /></h1>
+            <i class="i1">please choose the website that you want to visit</i>
+        </div>
+    </center>
+</body>
+
+</html>
+
+    {%endblock content%}
+

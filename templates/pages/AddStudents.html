@@ -1,0 +1,128 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Add Student</title>
+    <link rel="stylesheet" href="{% static 'css/update.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    <center>
+        <br />
+        <div id="myForm">
+
+            <form id="addStudent"  method="POST">
+                {% csrf_token %}
+                <br /><br />
+                <lable for="fname"><b> First Name: </b></lable><br>
+                <input type="text" id="fname" name="fname" placeholder="Student first name"><br>
+
+
+
+                <lable for="lname"><b>Last Name:</b> </lable><br>
+                <input type="text" id="lname" name="lname" placeholder="Student last name"><br>
+                <lable for="DB"><b> Date Of Birth:</b></lable><br>
+                <input type="date" id="DB" name="dateofbirth"><br>
+                <lable for="gpa"> <b>GPA: </b></lable><br>
+                <input type="number" step="0.01" id="gpa" name="gpa" placeholder="Student GPA"><br>
+                <lable for="id"> <b>ID:</b> </lable><br>
+                <input type="number" id="id" name="St_ID" placeholder="Student ID"><br />
+                <lable for="email"><b>E-mail</b></lable><br>
+                <input type="text" id="email" name="email" placeholder="Email Address"><br>
+                <lable for="PN"><b>PHONE NUMBER</b></lable><br>
+                <input type="number" id="pn" name="phonenumber" placeholder="Student phone number"><br>
+
+                <b>Gender:</b><br />
+                <input name="Gender" type="radio" id="female" value="female" />
+                <lable for="female">Female</lable><br />
+                <input name="Gender" type="radio" id="male" value="male" />
+                <lable for="male">Male</lable><br />
+                <br /><br />
+                <b>Level:</b><br />
+                <select name="level">
+                    <option name="level" value="one">Level one</option>
+                    <option name="level" value="two">Level two</option>
+                    <option name="level" value="three">Level three</option>
+                    <option name="level" value="four">Level four</option>
+                </select>
+                <br />
+
+
+                <b>Status</b><br />
+                <select name="status">
+                    <option name="status" value="active">Active</option>
+                    <option name="status" value="inactive">In Active</option>
+                </select>
+                <br />
+
+        <p><b>Department</b><br></p>
+        <select name="department">
+            <option name="department" value="general">General</option>
+            <option name="department" value="is">Information System</option>
+            <option name="department" value="cs">Computer Science</option>
+            <option name="department" value="ai">Artificial Intelligence</option>
+            <option name="department" value="ds">Decision Support </option>
+            <option name="department" value="it">Information Tecnology</option>
+        </select>
+        </div>
+        <!--
+
+                </div>
+
+                    <b>Gender:</b><br />
+                    <select name="gender" required>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                    <br />
+                </div>
+                <div>
+                    <b>Level:</b><br />
+                    <select name="level">
+                        <option value="one">Level one</option>
+                        <option value="two">Level two</option>
+                        <option value="three">Level three</option>
+                        <option value="four">Level four</option>
+                    </select>
+                    <br />
+                </div>
+                    <b>Status</b><br />
+                    <select name="status">
+                        <option value="active">Active</option>
+                        <option value="inactive">In Active</option>
+                    </select>
+                    <br />
+                </div>
+
+                    <p><b>Department</b><br></p>
+                    <select name="department">
+                        <option value="general">General</option>
+                        <option value="is">Information System</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="AI">Artificial Intelligence</option>
+                        <option value="DS">Decision Support </option>
+                        <option value="it">Information Tecnology</option>
+                    </select>
+                </div>
+
+                    <lable for="email"><b>E-mail</b></lable><br>
+                    <input type="text" id="email" name="email" placeholder="Email Address"><br>
+                    <div class="error"></div>
+                </div>
+
+                    <lable for="PN"><b>PHONE NUMBER</b></lable><br>
+                    <input type="number" id="PN" name="PN" placeholder="Student phone number"><br>
+                    <div class="error"></div>
+                </div>
+    -->
+        <input type="submit" value="Add" class="but">
+   </form>
+        </div>
+        </div>
+    </center>
+    <!--<script src="{% static 'js/main.js'%}"></script>-->
+</body>
+</html>
+    {%endblock content%}

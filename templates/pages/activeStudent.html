@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Active Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+
+<body>
+
+    <br />
+    <br />
+    <h1>Active Student</h1>
+    <table id="t1">
+        <tr>
+            <th>Name</th>
+            <th>Id</th>
+            <th>GPA</th>
+            <th>Level</th>
+            <th>Department</th>
+            <th>status</th>
+            <th>update</th>
+            <th>assign</th>
+        </tr>
+        {% for AddStudentt in activeStudent %}
+        {% if AddStudentt.status == 'active' %}
+        <tr>
+            <td> {{AddStudentt.fname}}</td>
+            <td>{{AddStudentt.St_ID}}</td>
+            <td>{{AddStudentt.gpa}}</td>
+            <td>{{AddStudentt.level}}</td>
+            <td>{{AddStudentt.department}}</td>
+            <td>{{AddStudentt.status}}</td>
+            <td><a href="Edit/{{AddStudentt.id}}">update</a></td>
+            <td><a href="AssignDepartment/{{AddStudentt.id}}">Assign department</a></td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+</body>
+
+</html>
+
+{%endblock content%}

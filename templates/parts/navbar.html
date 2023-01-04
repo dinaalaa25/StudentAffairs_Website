@@ -1,0 +1,20 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+    <center>
+        <div class="topnav">
+            <div class="navbar">
+                <a href="{%url 'Home'%}"> Home page</a>
+               
+                <a href="{%url 'Addstudent'%}">AddStudent</a>
+                <a href="{%url 'ViewStudent'%}"> View All Students</a>
+                <a href="{%url 'Search'%}">Search</a>
+                <a href="{%url 'MainPage'%}">Logout</a>
+                <a href="{%url 'activeStudent'%}">Active Students</a>
+            </div>
+</body>
+</html>
